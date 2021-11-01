@@ -1,6 +1,6 @@
 <?php
-$a = 'https://whm.oseucardapio.com.br:2083'; //localhost
-$b = 'kqprxoca'; //root
+$a = 'localhost'; //localhost
+$b = 'kqprxoca_gestor'; //root
 $c = '@senhaForte'; //usbw
 $d = 'kqprxoca_gestor'; //gestor
 $conn = new mysqli($a, $b, $c, $d);
