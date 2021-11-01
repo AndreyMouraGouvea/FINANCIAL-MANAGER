@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.esquerda{
+    width: 50vw;
+    height: 100vh;
+    background-color: navy;
+    color: white;
+    
+}
+div:hover{
+    background-color: black;
+    transition-delay: 2s smooth;
+}
+.esquerda form{
+    width: 25vw;
+    height: 50vh;
+    margin: 0 auto;
+    padding-top: 25vh;
+    /*
+    display: grid;
+    place-items: center;
+    */
+}
+#registro label{
+    display: block;
+    align-items: justify;
+    margin-top: 10px;
+}
+input{
+    width: 80%;
+    margin-left: 10%;
+}
+button{
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+button:hover{
+    border: 1px solid blue;
+    margin-top: 30px;
+    cursor: pointer;
+}
+legend{
+    text-align: center;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.direita{
+    
+}
