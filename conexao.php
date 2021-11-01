@@ -1,9 +1,11 @@
 <?php
+ini_set('default_charset', 'utf-8');
 $a = 'localhost'; //localhost
 $b = 'kqprxoca_gestor'; //root
 $c = '@senhaForte'; //usbw
 $d = 'kqprxoca_gestor'; //gestor
 $conn = new mysqli($a, $b, $c, $d);
+
 if(!$conn){
     alert("Erro ao Conectar!");
 }
@@ -20,10 +22,10 @@ function newUser($nome, $email, $senha){
         $msg = 'Para finalizar seu cadastro, ative a sua conta: '; //criando var
         $msg.= $validacao; //concatenando var
         if(mail($email, "Gestor-Financeiro[ativar conta]",$msg)){
-            alert("Para ativar sua conta, acesse seu email e resgate o cÃ³digo");
+            alert("Para ativar sua conta, acesse seu email e resgate o c¨®digo");
         }
         else{
-            alert("Falha ao enviar o cÃ³digo de ativaÃ§Ã£o");
+            alert("Falha ao enviar o código de ativação");
         }
     }
     else{
@@ -33,6 +35,24 @@ function newUser($nome, $email, $senha){
 function alert($msg){
     echo '<script>alert("'.$msg.'");</script>';
 }
+function vai($pagina){
+    echo '<script>window.location = "'.$pagina.'";</script>';
+}
+function validar($token){
+    $sql = 'UPDATE tb_usuario SET ds_status = "ATIVADA" WHERE ds_status= "'.$token.'"';
+    $resultado = $GLOBALS['conn']->query($sql);
+    if($resultado){
+        alert("Conta ativada com sucesso!");
+        //header('location: index.html');
+        //redirecionando pelo js
+        vai("index.html");
+    }
+    else{
+        alert("Código inválido!");
+    }
+}
+
+
 
 ?>
 
