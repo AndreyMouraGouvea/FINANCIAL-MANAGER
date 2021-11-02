@@ -19,13 +19,14 @@ function newUser($nome, $email, $senha){
     
     $resultado = $GLOBALS['conn']->query($sql);
     if($resultado){
+        ini_set('default_charset', 'utf-8');//ISO-8859-1
         $msg = 'Para finalizar seu cadastro, ative a sua conta: '; //criando var
         $msg.= $validacao; //concatenando var
         if(mail($email, "Gestor-Financeiro[ativar conta]",$msg)){
-            alert("Para ativar sua conta, acesse seu email e resgate o código");
+            alert("Para ativar sua conta, acesse seu email e resgate o codigo");
         }
         else{
-            alert("Falha ao enviar o c骴igo de ativa佺鉶");
+            alert("Falha ao enviar o código de ativação");
         }
     }
     else{
@@ -48,7 +49,7 @@ function validar($token){
         vai("index.html");
     }
     else{
-        alert("C骴igo inv醠ido!");
+        alert("Código inválido!");
     }
 }
 
