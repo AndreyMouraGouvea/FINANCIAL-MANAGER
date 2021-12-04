@@ -9,6 +9,22 @@ $conn = new mysqli($a, $b, $c, $d);
 if(!$conn){
     alert("Erro ao Conectar!");
 }
+/*************************CATEGORIA**********************/
+function newCategoria($nome){
+    $sql = 'INSERT INTO tb_categoria VALUES (null, "'.$nome.'")';
+    $resultado = $GLOBALS['conn']->query($sql);
+    $retorno = "";
+    if($resultado){
+        $retorno['msg'] = "Categoria Adicionada";
+    }else{
+        $retorno['msg'] = "Erro ao adicionar Categoria";
+        $retorno['erro'] = false;
+    }
+}
+
+
+
+
 function newUser($nome, $email, $senha){
     $validacao = md5($nome.date('d'));
     $sql = 'INSERT INTO tb_usuario VALUES (null, "'.$nome.'",
