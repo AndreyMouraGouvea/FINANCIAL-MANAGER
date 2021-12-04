@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Financeiro</title>
+    <link rel="shortcut icon" href="img/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="css/turma.css">
+</head>
+<body>
+<div class="center">
+    <h1>Cadastro Turma</h1>
+    <form id="escola" action="turma.php" method="POST">
+        <div class="txt_field">
+            <input type="text" required name="nome">
+            <span></span>
+            <label>Nome</label>
+        </div>
+        <div class="txt_field">
+            <input type="email" required name="email">
+            <span></span>
+            <label>E-mail</label>
+        </div>
+        <div class="txt_field">
+            <select class="txt_field option_field" name="turma">
+                <option>Turma</option>
+                <option value="1 DES">1 DES</option>
+                <option value="2 DES">2 DES</option>
+                <option value="3 DES">3 DES</option>
+
+            </select>
+        </div>
+        <input type="submit" value="Cadastre-se">
+    </form>
+
+</div>
+</body>
+</html>

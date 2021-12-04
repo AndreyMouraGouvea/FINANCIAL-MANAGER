@@ -69,8 +69,22 @@ function validar($token){
     }
 }
 
-
-
+/*************************ALUNO**********************/
+function newAluno($nome, $email, $turma){
+    $sql = 'INSERT INTO tb_aluno VALUES (null, "'.$nome.'", 
+    "'.$email.'",
+    "'.$turma.'")';
+    
+    $resultado = $GLOBALS['conn']->query($sql);
+    if($resultado){
+        alert("Aluno adicionado com sucesso!");
+        vai("home.php");
+    }
+    else{
+        alert("Erro ao Cadastrar, Tente Novamente!");
+    }
+        
+}
 ?>
 
 
